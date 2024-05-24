@@ -1,10 +1,4 @@
-import { Order } from "@/types";
-
-type Props = {
-  order: Order;
-};
-
-export const OrderStatusDetail = ({ order }: Props) => {
+export const OrderStatusDetail = () => {
   return (
     <div className="space-y-5">
       <div className="flex flex-col"></div>
