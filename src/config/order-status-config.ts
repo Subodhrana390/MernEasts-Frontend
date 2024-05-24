@@ -29,7 +29,7 @@ export const ORDER_STATUS: OrderStatusInfo[] = [
   },
   {
     label: "Delivered",
-    value: "deliverd",
+    value: "delivered",
     progressValue: 100,
   },
 ];
