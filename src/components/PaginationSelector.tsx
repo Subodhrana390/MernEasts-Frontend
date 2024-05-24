@@ -15,38 +15,38 @@ type Props = {
 
 const PaginationSelector = ({ page, pages, onPageChange }: Props) => {
   const pageNumbers = [];
-  for (let i = 0; i < pages; i++) {
+  for (let i = 1; i <= pages; i++) {
     pageNumbers.push(i);
   }
   return (
     <Pagination>
-      {page != 1 && (
-        <PaginationContent>
+      <PaginationContent>
+        {page != 1 && (
           <PaginationItem>
             <PaginationPrevious
               href="#"
               onClick={() => onPageChange(page - 1)}
             />
           </PaginationItem>
-          {pageNumbers.map((number) => (
-            <PaginationItem>
-              <PaginationLink
-                href="#"
-                onClick={() => onPageChange(number)}
-                isActive={page === number}
-              >
-                {number}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
+        )}
+        {pageNumbers.map((number) => (
+          <PaginationItem>
+            <PaginationLink
+              href="#"
+              onClick={() => onPageChange(number)}
+              isActive={page === number}
+            >
+              {number}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
 
-          {page != pageNumbers.length && (
-            <PaginationItem>
-              <PaginationNext href="#" onClick={() => onPageChange(page + 1)} />
-            </PaginationItem>
-          )}
-        </PaginationContent>
-      )}
+        {page !== pageNumbers.length && (
+          <PaginationItem>
+            <PaginationNext href="#" onClick={() => onPageChange(page + 1)} />
+          </PaginationItem>
+        )}
+      </PaginationContent>
     </Pagination>
   );
 };
